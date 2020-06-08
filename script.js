@@ -10,6 +10,8 @@ const forthAnswer = document.querySelector("#answer4");
 const horizontalRule = document.querySelector("#questionBoxHr");
 const answerStatus = document.querySelector("#answerCheck");
 const allDoneBox = document.querySelector("#allDone");
+const inputButton = document.querySelector("#inputButton");
+const highScoresDiv = document.querySelector("#highScores")
 let questionIndex = 0;
 const questions = [{
         question: "Commonly used data types DO NOT include:",
@@ -108,16 +110,22 @@ function goToNextQuestion() {
         allDoneBox.classList.replace("hide", "show");
         questionsContainer.classList.replace("show", "hide");
         horizontalRule.classList.replace("show", "hide");
+    } else {
+        question.textContent = questions[questionIndex].question;
+        firstAnswer.textContent = questions[questionIndex].answers[0].text
+        firstAnswer.setAttribute("data", questions[questionIndex].answers[0].correct);
+        secondAnswer.textContent = questions[questionIndex].answers[1].text
+        secondAnswer.setAttribute("data", questions[questionIndex].answers[1].correct);
+        thirdAnswer.textContent = questions[questionIndex].answers[2].text
+        thirdAnswer.setAttribute("data", questions[questionIndex].answers[2].correct);
+        forthAnswer.textContent = questions[questionIndex].answers[3].text
+        forthAnswer.setAttribute("data", questions[questionIndex].answers[3].correct);
+        horizontalRule.classList.replace("show", "hide");
+        answerStatus.textContent = "";
     }
-    question.textContent = questions[questionIndex].question;
-    firstAnswer.textContent = questions[questionIndex].answers[0].text
-    firstAnswer.setAttribute("data", questions[questionIndex].answers[0].correct);
-    secondAnswer.textContent = questions[questionIndex].answers[1].text
-    secondAnswer.setAttribute("data", questions[questionIndex].answers[1].correct);
-    thirdAnswer.textContent = questions[questionIndex].answers[2].text
-    thirdAnswer.setAttribute("data", questions[questionIndex].answers[2].correct);
-    forthAnswer.textContent = questions[questionIndex].answers[3].text
-    forthAnswer.setAttribute("data", questions[questionIndex].answers[3].correct);
-    horizontalRule.classList.replace("show", "hide");
-    answerStatus.textContent = "";
 }
+
+inputButton.addEventListener("click", function () {
+    allDoneBox.classList.replace("show", "hide");
+    highScoresDiv.classList.replace("hide", "show");
+})
