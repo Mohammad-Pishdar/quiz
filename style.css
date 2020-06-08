@@ -62,3 +62,17 @@ hr {
 #answerCheck {
     text-align: left;
 }
+
+#allDoneMessage {
+    font-size: 25px;
+    font-weight: bold;
+    text-align: left;
+}
+
+#allDoneParagraph {
+    text-align: left;
+}
+
+form {
+    float: left;
+}
