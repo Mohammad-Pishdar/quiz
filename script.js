@@ -9,6 +9,7 @@ const thirdAnswer = document.querySelector("#answer3");
 const forthAnswer = document.querySelector("#answer4");
 const horizontalRule = document.querySelector("#questionBoxHr");
 const answerStatus = document.querySelector("#answerCheck");
+let questionIndex = 0;
 const questions = [{
         question: "Commonly used data types DO NOT include:",
         answers: [{
@@ -93,5 +94,24 @@ answerButtons.addEventListener("click", function (event) {
     if (event.target.getAttribute("data") === "true") {
         horizontalRule.classList.replace("hide", "show");
         answerStatus.textContent = "Correct!";
+    } else {
+        horizontalRule.classList.replace("hide", "show");
+        answerStatus.textContent = "Incorrect!";
     }
+    goToNextQuestion();
 });
+
+function goToNextQuestion() {
+    questionIndex++
+    question.textContent = questions[questionIndex].question;
+    firstAnswer.textContent = questions[questionIndex].answers[0].text
+    firstAnswer.setAttribute("data", questions[questionIndex].answers[0].correct);
+    secondAnswer.textContent = questions[questionIndex].answers[1].text
+    secondAnswer.setAttribute("data", questions[questionIndex].answers[1].correct);
+    thirdAnswer.textContent = questions[questionIndex].answers[2].text
+    thirdAnswer.setAttribute("data", questions[questionIndex].answers[2].correct);
+    forthAnswer.textContent = questions[questionIndex].answers[3].text
+    forthAnswer.setAttribute("data", questions[questionIndex].answers[3].correct);
+    // horizontalRule.classList.replace("show", "hide");
+    // answerStatus.textContent = "";
+}
