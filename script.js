@@ -98,7 +98,7 @@ answerButtons.addEventListener("click", function (event) {
         horizontalRule.classList.replace("hide", "show");
         answerStatus.textContent = "Incorrect!";
     }
-    goToNextQuestion();
+    setTimeout(goToNextQuestion, 2000);
 });
 
 function goToNextQuestion() {
@@ -112,6 +112,6 @@ function goToNextQuestion() {
     thirdAnswer.setAttribute("data", questions[questionIndex].answers[2].correct);
     forthAnswer.textContent = questions[questionIndex].answers[3].text
     forthAnswer.setAttribute("data", questions[questionIndex].answers[3].correct);
-    // horizontalRule.classList.replace("show", "hide");
-    // answerStatus.textContent = "";
+    horizontalRule.classList.replace("show", "hide");
+    answerStatus.textContent = "";
 }
