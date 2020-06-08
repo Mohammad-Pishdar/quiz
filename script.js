@@ -1,10 +1,20 @@
 const startButton = document.querySelector("#startQuizButton");
 const startQuizContainer = document.querySelector("#startQuizContainer")
 const questionsContainer = document.querySelector("#question-container");
+const question = document.querySelector("#question");
+const firstAnswer = document.querySelector("#answer1");
+const secondAnswer = document.querySelector("#answer2");
+const thirdAnswer = document.querySelector("#answer3");
+const forthAnswer = document.querySelector("#answer4");
 
 startButton.addEventListener("click", function () {
     startQuizContainer.classList.replace("show", "hide");
     questionsContainer.classList.replace("hide", "show");
+    question.textContent = questions[0].question;
+    firstAnswer.textContent = questions[0].answers[0].text
+    secondAnswer.textContent = questions[0].answers[1].text
+    thirdAnswer.textContent = questions[0].answers[2].text
+    forthAnswer.textContent = questions[0].answers[3].text
 })
 
 const questions = [{

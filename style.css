@@ -42,3 +42,14 @@
 .hide {
     display: none;
 }
+
+.answer-buttons {
+    text-align: left;
+    margin: 2px;
+}
+
+#question {
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
