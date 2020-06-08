@@ -53,3 +53,11 @@
     font-weight: bold;
     margin-bottom: 20px;
 }
+
+hr {
+    border: 1px solid gray;
+}
+
+#answerCheck {
+    text-align: left;
+}

@@ -2,21 +2,13 @@ const startButton = document.querySelector("#startQuizButton");
 const startQuizContainer = document.querySelector("#startQuizContainer")
 const questionsContainer = document.querySelector("#question-container");
 const question = document.querySelector("#question");
+const answerButtons = document.querySelector("#answer-buttons")
 const firstAnswer = document.querySelector("#answer1");
 const secondAnswer = document.querySelector("#answer2");
 const thirdAnswer = document.querySelector("#answer3");
 const forthAnswer = document.querySelector("#answer4");
-
-startButton.addEventListener("click", function () {
-    startQuizContainer.classList.replace("show", "hide");
-    questionsContainer.classList.replace("hide", "show");
-    question.textContent = questions[0].question;
-    firstAnswer.textContent = questions[0].answers[0].text
-    secondAnswer.textContent = questions[0].answers[1].text
-    thirdAnswer.textContent = questions[0].answers[2].text
-    forthAnswer.textContent = questions[0].answers[3].text
-})
-
+const horizontalRule = document.querySelector("#questionBoxHr");
+const answerStatus = document.querySelector("#answerCheck");
 const questions = [{
         question: "Commonly used data types DO NOT include:",
         answers: [{
@@ -82,3 +74,24 @@ const questions = [{
         }]
     }
 ]
+
+startButton.addEventListener("click", function () {
+    startQuizContainer.classList.replace("show", "hide");
+    questionsContainer.classList.replace("hide", "show");
+    question.textContent = questions[0].question;
+    firstAnswer.textContent = questions[0].answers[0].text
+    firstAnswer.setAttribute("data", false);
+    secondAnswer.textContent = questions[0].answers[1].text
+    secondAnswer.setAttribute("data", false);
+    thirdAnswer.textContent = questions[0].answers[2].text
+    thirdAnswer.setAttribute("data", true);
+    forthAnswer.textContent = questions[0].answers[3].text
+    forthAnswer.setAttribute("data", false);
+})
+
+answerButtons.addEventListener("click", function (event) {
+    if (event.target.getAttribute("data") === "true") {
+        horizontalRule.classList.replace("hide", "show");
+        answerStatus.textContent = "Correct!";
+    }
+});
