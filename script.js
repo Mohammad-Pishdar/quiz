@@ -9,6 +9,7 @@ const thirdAnswer = document.querySelector("#answer3");
 const forthAnswer = document.querySelector("#answer4");
 const horizontalRule = document.querySelector("#questionBoxHr");
 const answerStatus = document.querySelector("#answerCheck");
+const allDoneBox = document.querySelector("#allDone");
 let questionIndex = 0;
 const questions = [{
         question: "Commonly used data types DO NOT include:",
@@ -103,6 +104,11 @@ answerButtons.addEventListener("click", function (event) {
 
 function goToNextQuestion() {
     questionIndex++
+    if (questionIndex === questions.length) {
+        allDoneBox.classList.replace("hide", "show");
+        questionsContainer.classList.replace("show", "hide");
+        horizontalRule.classList.replace("show", "hide");
+    }
     question.textContent = questions[questionIndex].question;
     firstAnswer.textContent = questions[questionIndex].answers[0].text
     firstAnswer.setAttribute("data", questions[questionIndex].answers[0].correct);
