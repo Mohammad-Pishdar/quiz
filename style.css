@@ -16,16 +16,15 @@
 
 }
 
-#startQuizContainer {
+#startQuizContainer,
+#question-container {
     text-align: center;
     width: 35%;
     margin: 0 auto;
-}
-
-h1 {
-    text-align: center;
     margin-top: 200px;
 }
+
+
 
 .button {
     background-color: #563d7c;
@@ -35,4 +34,13 @@ h1 {
 
 .button:hover {
     background-color: #8570a5;
+}
+
+.button-grid {
+    display: grid;
+    width: 30%;
+}
+
+.hide {
+    display: none;
 }
