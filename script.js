@@ -143,7 +143,9 @@ function timer() {
         secondsNumber.textContent = secondsRemaining;
         if (secondsRemaining === 0) {
             questionsContainer.classList.replace("show", "hide");
+            secondsNumber.classList.replace("show", "hide");
             gameOverDiv.classList.replace("hide", "show");
         }
     }, 1000);
+
 }
