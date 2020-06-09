@@ -16,6 +16,7 @@ const secondsNumber = document.querySelector("#seconds");
 const gameOverDiv = document.querySelector("#gameOver");
 let questionIndex = 0;
 let secondsRemaining = 80;
+let intervalReference;
 const questions = [{
         question: "Commonly used data types DO NOT include:",
         answers: [{
@@ -138,13 +139,14 @@ inputButton.addEventListener("click", function () {
 
 
 function timer() {
-    setInterval(function interval() {
+    intervalReference = setInterval(function interval() {
         secondsRemaining--;
         secondsNumber.textContent = secondsRemaining;
         if (secondsRemaining === 0) {
             questionsContainer.classList.replace("show", "hide");
-            secondsNumber.classList.replace("show", "hide");
+            // secondsNumber.classList.replace("show", "hide");
             gameOverDiv.classList.replace("hide", "show");
+            clearInterval(intervalReference);
         }
     }, 1000);
 
