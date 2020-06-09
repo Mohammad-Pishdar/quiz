@@ -10,11 +10,13 @@ const forthAnswer = document.querySelector("#answer4");
 const horizontalRule = document.querySelector("#questionBoxHr");
 const answerStatus = document.querySelector("#answerCheck");
 const allDoneBox = document.querySelector("#allDone");
-const inputButton = document.querySelector("#inputButton");
+const highscoreInputButton = document.querySelector("#inputButton");
 const highScoresDiv = document.querySelector("#highScores")
 const secondsNumber = document.querySelector("#seconds");
 const gameOverDiv = document.querySelector("#gameOver");
 const finalScore = document.querySelector("#finalScore");
+const highscoreInputText = document.querySelector("#highscoreInputText");
+const highscoreTable = document.querySelector("#highscoreTable")
 let questionIndex = 0;
 let secondsRemaining = 80;
 let intervalReference;
@@ -138,9 +140,14 @@ function goToNextQuestion() {
     }
 }
 
-inputButton.addEventListener("click", function () {
+highscoreInputButton.addEventListener("click", function () {
     allDoneBox.classList.replace("show", "hide");
     highScoresDiv.classList.replace("hide", "show");
+    let newTableRow = document.createElement("tr");
+    let newTableCell = document.createElement("td");
+    newTableCell.textContent = highscoreInputText.value;
+    newTableRow.appendChild(newTableCell);
+    highscoreTable.appendChild(newTableRow);
 })
 
 

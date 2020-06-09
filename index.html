@@ -34,16 +34,13 @@
         <p id="allDoneParagraph">Your final score is <span id="finalScore"></span>.</p>
         <form action="#">
             <label for="Initials">Enter Initials:</label>
-            <input type="text">
+            <input type="text" id="highscoreInputText">
             <input type="button" value="Submit" class="button" id="inputButton">
         </form>
     </div>
     <div id="highScores" class="hide">
         <h1>Highscores</h1>
-        <table>
-            <tr>
-                <td>Sample Text</td>
-            </tr>
+        <table id="highscoreTable">
         </table>
         <button class="button">Go Back</button>
         <button class="button">Clear Highscores</button>
