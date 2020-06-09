@@ -105,6 +105,8 @@ answerButtons.addEventListener("click", function (event) {
     } else {
         horizontalRule.classList.replace("hide", "show");
         answerStatus.textContent = "Incorrect!";
+        secondsNumber.textContent = parseInt(secondsNumber.textContent) - 10;
+        secondsRemaining = secondsRemaining - 10;
     }
     setTimeout(goToNextQuestion, 2000);
 });
