@@ -144,10 +144,15 @@ function timer() {
         secondsNumber.textContent = secondsRemaining;
         if (secondsRemaining === 0) {
             questionsContainer.classList.replace("show", "hide");
-            // secondsNumber.classList.replace("show", "hide");
             gameOverDiv.classList.replace("hide", "show");
             clearInterval(intervalReference);
+            setTimeout(goBackToStartPage, 1000);
+            secondsRemaining = 80;
         }
     }, 1000);
+}
 
+function goBackToStartPage() {
+    gameOverDiv.classList.replace("show", "hide");
+    startQuizContainer.classList.replace("hide", "show");
 }
