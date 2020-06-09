@@ -164,6 +164,7 @@ function timer() {
             clearInterval(intervalReference);
             setTimeout(goBackToStartPage, 1000);
             secondsRemaining = 80;
+            questionIndex = 0;
         }
     }, 1000);
 }
