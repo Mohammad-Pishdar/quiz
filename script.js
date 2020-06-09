@@ -14,6 +14,7 @@ const inputButton = document.querySelector("#inputButton");
 const highScoresDiv = document.querySelector("#highScores")
 const secondsNumber = document.querySelector("#seconds");
 const gameOverDiv = document.querySelector("#gameOver");
+const finalScore = document.querySelector("#finalScore");
 let questionIndex = 0;
 let secondsRemaining = 80;
 let intervalReference;
@@ -107,6 +108,11 @@ answerButtons.addEventListener("click", function (event) {
         answerStatus.textContent = "Incorrect!";
         secondsNumber.textContent = parseInt(secondsNumber.textContent) - 10;
         secondsRemaining = secondsRemaining - 10;
+    }
+    if ((questions[(questions.length - 1)].question === question.textContent) && (event.target.getAttribute("data") === "true" || event.target.getAttribute("data") === "false")) {
+        console.log("success");
+        clearInterval(intervalReference);
+        finalScore.textContent = secondsNumber.textContent;
     }
     setTimeout(goToNextQuestion, 2000);
 });
