@@ -12,7 +12,9 @@ const answerStatus = document.querySelector("#answerCheck");
 const allDoneBox = document.querySelector("#allDone");
 const inputButton = document.querySelector("#inputButton");
 const highScoresDiv = document.querySelector("#highScores")
+const secondsNumber = document.querySelector("#seconds");
 let questionIndex = 0;
+let secondsRemaining = 80;
 const questions = [{
         question: "Commonly used data types DO NOT include:",
         answers: [{
@@ -80,6 +82,7 @@ const questions = [{
 ]
 
 startButton.addEventListener("click", function () {
+    timer();
     startQuizContainer.classList.replace("show", "hide");
     questionsContainer.classList.replace("hide", "show");
     question.textContent = questions[0].question;
@@ -129,3 +132,11 @@ inputButton.addEventListener("click", function () {
     allDoneBox.classList.replace("show", "hide");
     highScoresDiv.classList.replace("hide", "show");
 })
+
+
+function timer() {
+    setInterval(function () {
+        secondsRemaining--;
+        secondsNumber.textContent = secondsRemaining;
+    }, 1000);
+}
