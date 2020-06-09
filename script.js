@@ -178,4 +178,6 @@ highscoreGoBackButton.addEventListener("click", function () {
     startQuizContainer.classList.replace("hide", "show");
     secondsRemaining = 80;
     secondsNumber.textContent = 0;
+    answerStatus.textContent = "";
+    questionIndex = 0;
 })
