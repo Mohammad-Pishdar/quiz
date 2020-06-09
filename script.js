@@ -17,6 +17,7 @@ const gameOverDiv = document.querySelector("#gameOver");
 const finalScore = document.querySelector("#finalScore");
 const highscoreInputText = document.querySelector("#highscoreInputText");
 const highscoreTable = document.querySelector("#highscoreTable")
+const highscoreGoBackButton = document.querySelector("#highscoreGoBackButton");
 let questionIndex = 0;
 let secondsRemaining = 80;
 let intervalReference;
@@ -171,3 +172,10 @@ function goBackToStartPage() {
     gameOverDiv.classList.replace("show", "hide");
     startQuizContainer.classList.replace("hide", "show");
 }
+
+highscoreGoBackButton.addEventListener("click", function () {
+    highScoresDiv.classList.replace("show", "hide");
+    startQuizContainer.classList.replace("hide", "show");
+    secondsRemaining = 80;
+    secondsNumber.textContent = 0;
+})
