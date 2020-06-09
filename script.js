@@ -146,7 +146,7 @@ highscoreInputButton.addEventListener("click", function () {
     highScoresDiv.classList.replace("hide", "show");
     let newTableRow = document.createElement("tr");
     let newTableCell = document.createElement("td");
-    newTableCell.textContent = highscoreInputText.value;
+    newTableCell.textContent = (highscoreInputText.value).toUpperCase() + " - " + secondsNumber.textContent;
     newTableRow.appendChild(newTableCell);
     highscoreTable.appendChild(newTableRow);
 })
