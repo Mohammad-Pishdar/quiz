@@ -19,6 +19,7 @@ const highscoreInputText = document.querySelector("#highscoreInputText");
 const highscoreTable = document.querySelector("#highscoreTable")
 const highscoreGoBackButton = document.querySelector("#highscoreGoBackButton");
 const highscoreLink = document.querySelector("#highscoreLink");
+const clearHighscoreButton = document.querySelector("#clearHighscoreButton");
 let questionIndex = 0;
 let secondsRemaining = 80;
 let intervalReference;
@@ -27,7 +28,7 @@ let initialsAndHighscores = [];
 
 initialsAndHighscores = JSON.parse(localStorage.getItem("initialsAndHighscores"));
 
-if (localStorage) {
+if (localStorage && initialsAndHighscores != null) {
     for (let i = 0; i < initialsAndHighscores.length; i++) {
         let newTableRow = document.createElement("tr");
         let newTableCell = document.createElement("td");
@@ -35,6 +36,8 @@ if (localStorage) {
         newTableRow.appendChild(newTableCell);
         highscoreTable.appendChild(newTableRow);
     }
+} else {
+    initialsAndHighscores = [];
 }
 
 const questions = [{
@@ -217,4 +220,9 @@ highscoreGoBackButton.addEventListener("click", function () {
     secondsNumber.textContent = 0;
     answerStatus.textContent = "";
     questionIndex = 0;
+})
+
+clearHighscoreButton.addEventListener("click", function () {
+    localStorage.clear();
+    initialsAndHighscores = [];
 })
