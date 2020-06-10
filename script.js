@@ -25,7 +25,17 @@ let intervalReference;
 
 let initialsAndHighscores = [];
 
-// initialsAndHighscores = JSON.parse(localStorage.getItem("initialsAndHighscores"));
+initialsAndHighscores = JSON.parse(localStorage.getItem("initialsAndHighscores"));
+
+if (localStorage) {
+    for (let i = 0; i < initialsAndHighscores.length; i++) {
+        let newTableRow = document.createElement("tr");
+        let newTableCell = document.createElement("td");
+        newTableCell.textContent = initialsAndHighscores[i].initials + " - " + initialsAndHighscores[i].highscore;
+        newTableRow.appendChild(newTableCell);
+        highscoreTable.appendChild(newTableRow);
+    }
+}
 
 const questions = [{
         question: "Commonly used data types DO NOT include:",
