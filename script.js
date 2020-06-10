@@ -20,26 +20,6 @@ const highscoreTable = document.querySelector("#highscoreTable")
 const highscoreGoBackButton = document.querySelector("#highscoreGoBackButton");
 const highscoreLink = document.querySelector("#highscoreLink");
 const clearHighscoreButton = document.querySelector("#clearHighscoreButton");
-let questionIndex = 0;
-let secondsRemaining = 80;
-let intervalReference;
-
-let initialsAndHighscores = [];
-
-initialsAndHighscores = JSON.parse(localStorage.getItem("initialsAndHighscores"));
-
-if (localStorage && initialsAndHighscores != null) {
-    for (let i = 0; i < initialsAndHighscores.length; i++) {
-        let newTableRow = document.createElement("tr");
-        let newTableCell = document.createElement("td");
-        newTableCell.textContent = initialsAndHighscores[i].initials + " - " + initialsAndHighscores[i].highscore;
-        newTableRow.appendChild(newTableCell);
-        highscoreTable.appendChild(newTableRow);
-    }
-} else {
-    initialsAndHighscores = [];
-}
-
 const questions = [{
         question: "Commonly used data types DO NOT include:",
         answers: [{
@@ -105,6 +85,24 @@ const questions = [{
         }]
     }
 ]
+let questionIndex = 0;
+let secondsRemaining = 80;
+let intervalReference;
+let initialsAndHighscores = [];
+
+initialsAndHighscores = JSON.parse(localStorage.getItem("initialsAndHighscores"));
+
+if (localStorage && initialsAndHighscores != null) {
+    for (let i = 0; i < initialsAndHighscores.length; i++) {
+        let newTableRow = document.createElement("tr");
+        let newTableCell = document.createElement("td");
+        newTableCell.textContent = initialsAndHighscores[i].initials + " - " + initialsAndHighscores[i].highscore;
+        newTableRow.appendChild(newTableCell);
+        highscoreTable.appendChild(newTableRow);
+    }
+} else {
+    initialsAndHighscores = [];
+}
 
 startButton.addEventListener("click", function () {
     timer();
@@ -163,19 +161,27 @@ function goToNextQuestion() {
 highscoreInputButton.addEventListener("click", function () {
     allDoneBox.classList.replace("show", "hide");
     highScoresDiv.classList.replace("hide", "show");
-    let newTableRow = document.createElement("tr");
-    let newTableCell = document.createElement("td");
+
     let initials = (highscoreInputText.value).toUpperCase();
     let highscore = secondsNumber.textContent;
     initialsAndHighscores.push({
         initials: initials,
         highscore: highscore
     });
+    initialsAndHighscores.sort(function (a, b) {
+        return parseFloat(b.highscore) - parseFloat(a.highscore);
+    });
     let initialsAndHighscoresString = JSON.stringify(initialsAndHighscores);
     localStorage.setItem("initialsAndHighscores", initialsAndHighscoresString);
-    newTableCell.textContent = initialsAndHighscores[initialsAndHighscores.length - 1].initials + " - " + initialsAndHighscores[initialsAndHighscores.length - 1].highscore;
-    newTableRow.appendChild(newTableCell);
-    highscoreTable.appendChild(newTableRow);
+    highscoreTable.innerHTML = "";
+    for (let i = 0; i < initialsAndHighscores.length; i++) {
+        let newTableRow = document.createElement("tr");
+        let newTableCell = document.createElement("td");
+        newTableCell.textContent = initialsAndHighscores[i].initials + " - " + initialsAndHighscores[i].highscore;
+        newTableRow.appendChild(newTableCell);
+        highscoreTable.appendChild(newTableRow);
+    }
+
 })
 
 highscoreLink.addEventListener("click", function (event) {
