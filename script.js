@@ -22,6 +22,8 @@ const highscoreLink = document.querySelector("#highscoreLink");
 let questionIndex = 0;
 let secondsRemaining = 80;
 let intervalReference;
+let initialsAndHighscores = [];
+
 const questions = [{
         question: "Commonly used data types DO NOT include:",
         answers: [{
@@ -147,6 +149,12 @@ highscoreInputButton.addEventListener("click", function () {
     highScoresDiv.classList.replace("hide", "show");
     let newTableRow = document.createElement("tr");
     let newTableCell = document.createElement("td");
+    let initials = highscoreInputText.value;
+    let highscore = secondsNumber.textContent;
+    initialsAndHighscores.push({
+        initials: initials,
+        highscore: highscore
+    });
     newTableCell.textContent = (highscoreInputText.value).toUpperCase() + " - " + secondsNumber.textContent;
     newTableRow.appendChild(newTableCell);
     highscoreTable.appendChild(newTableRow);
