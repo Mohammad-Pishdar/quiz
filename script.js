@@ -22,7 +22,10 @@ const highscoreLink = document.querySelector("#highscoreLink");
 let questionIndex = 0;
 let secondsRemaining = 80;
 let intervalReference;
+
 let initialsAndHighscores = [];
+
+// initialsAndHighscores = JSON.parse(localStorage.getItem("initialsAndHighscores"));
 
 const questions = [{
         question: "Commonly used data types DO NOT include:",
@@ -149,13 +152,15 @@ highscoreInputButton.addEventListener("click", function () {
     highScoresDiv.classList.replace("hide", "show");
     let newTableRow = document.createElement("tr");
     let newTableCell = document.createElement("td");
-    let initials = highscoreInputText.value;
+    let initials = (highscoreInputText.value).toUpperCase();
     let highscore = secondsNumber.textContent;
     initialsAndHighscores.push({
         initials: initials,
         highscore: highscore
     });
-    newTableCell.textContent = (highscoreInputText.value).toUpperCase() + " - " + secondsNumber.textContent;
+    let initialsAndHighscoresString = JSON.stringify(initialsAndHighscores);
+    localStorage.setItem("initialsAndHighscores", initialsAndHighscoresString);
+    newTableCell.textContent = initialsAndHighscores[initialsAndHighscores.length - 1].initials + " - " + initialsAndHighscores[initialsAndHighscores.length - 1].highscore;
     newTableRow.appendChild(newTableCell);
     highscoreTable.appendChild(newTableRow);
 })
