@@ -225,4 +225,5 @@ highscoreGoBackButton.addEventListener("click", function () {
 clearHighscoreButton.addEventListener("click", function () {
     localStorage.clear();
     initialsAndHighscores = [];
+    highscoreTable.innerHTML = "";
 })
