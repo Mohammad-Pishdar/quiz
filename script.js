@@ -18,6 +18,7 @@ const finalScore = document.querySelector("#finalScore");
 const highscoreInputText = document.querySelector("#highscoreInputText");
 const highscoreTable = document.querySelector("#highscoreTable")
 const highscoreGoBackButton = document.querySelector("#highscoreGoBackButton");
+const highscoreLink = document.querySelector("#highscoreLink");
 let questionIndex = 0;
 let secondsRemaining = 80;
 let intervalReference;
@@ -151,6 +152,18 @@ highscoreInputButton.addEventListener("click", function () {
     highscoreTable.appendChild(newTableRow);
 })
 
+highscoreLink.addEventListener("click", function (event) {
+    event.preventDefault();
+    startQuizContainer.classList.replace("show", "hide");
+    questionsContainer.classList.replace("show", "hide");
+    allDoneBox.classList.replace("show", "hide");
+    highScoresDiv.classList.replace("hide", "show");
+    clearInterval(intervalReference);
+    secondsRemaining = 80;
+    secondsNumber.textContent = 0;
+    answerStatus.textContent = "";
+    questionIndex = 0;
+})
 
 
 
