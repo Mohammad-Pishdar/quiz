@@ -219,9 +219,40 @@
     }
 }
 
+@media screen and (width: 412px) and (height: 662px) {
+    #startQuizContainer {
+        margin-top: 50%;
+    }
+
+    #question {
+        text-align: left;
+        font-size: 15px;
+    }
+
+    #question-container {
+        width: 90%;
+    }
+
+    .button-grid {
+        width: 60%;
+    }
+
+    #allDone {
+        width: 80%;
+    }
+
+    #inputButton {
+        margin-top: 20px;
+    }
+
+    #clearHighscoreButton {
+        width: 100%;
+    }
+}
+
 @media screen and (width: 411px) and (height: 823px) {
     #startQuizContainer {
-        margin-top: 300px;
+        margin-top: 70%;
     }
 
     #question {
@@ -279,7 +310,7 @@
 
 @media screen and (width: 360px) and (height: 640px) {
     #startQuizContainer {
-        margin-top: 200px;
+        margin-top: 50%;
     }
 
     #question {
