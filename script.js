@@ -126,8 +126,12 @@ answerButtons.addEventListener("click", function (event) {
     } else {
         horizontalRule.classList.replace("hide", "show");
         answerStatus.textContent = "Incorrect!";
-        secondsNumber.textContent = parseInt(secondsNumber.textContent) - 10;
-        secondsRemaining = secondsRemaining - 10;
+        if (secondsRemaining < 10) {
+            secondsRemaining = 0
+        } else {
+            secondsRemaining = secondsRemaining - 10;
+            secondsNumber.textContent = parseInt(secondsNumber.textContent) - 10;
+        }
     }
     if ((questions[(questions.length - 1)].question === question.textContent) && (event.target.getAttribute("data") === "true" || event.target.getAttribute("data") === "false")) {
         console.log("success");
@@ -143,6 +147,16 @@ function goToNextQuestion() {
         allDoneBox.classList.replace("hide", "show");
         questionsContainer.classList.replace("show", "hide");
         horizontalRule.classList.replace("show", "hide");
+    } else if (secondsRemaining < 0) {
+        secondsNumber.textContent = "0";
+        questionsContainer.classList.replace("show", "hide");
+        horizontalRule.classList.replace("show", "hide");
+        answerStatus.textContent = "";
+        gameOverDiv.classList.replace("hide", "show");
+        clearInterval(intervalReference);
+        setTimeout(goBackToStartPage, 1000);
+        secondsRemaining = 80;
+        questionIndex = 0;
     } else {
         question.textContent = questions[questionIndex].question;
         firstAnswer.textContent = questions[questionIndex].answers[0].text
