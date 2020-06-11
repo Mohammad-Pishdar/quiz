@@ -29,7 +29,7 @@ The idea about how to structure the questions and answers array has been taken w
 
 ## License
 
-You can see the license [here](https://github.com/Mohammad-Pishdar/password-generator/blob/master/LICENSE.txt).
+You can see the license [here](https://github.com/Mohammad-Pishdar/quiz/blob/master/LICENSE).
 
 
 
