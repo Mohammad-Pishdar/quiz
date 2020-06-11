@@ -22,14 +22,14 @@
     width: 35%;
     margin: 0 auto;
     margin-top: 200px;
+    margin-bottom: 200px;
 }
-
-
 
 .button {
     background-color: #563d7c;
     border-radius: 5px;
     color: white;
+    cursor: pointer;
 }
 
 .button:hover {
@@ -38,7 +38,7 @@
 
 .button-grid {
     display: grid;
-    width: 30%;
+    width: 40%;
 }
 
 .hide {
@@ -101,4 +101,20 @@ tr:nth-child(odd) {
     text-align: center;
     margin-top: 200px;
 }
+
+.highscorebuttons {
+    float: left;
+    margin-right: 10px;
+}
+
+.highscoreheader {
+    text-align: left;
+}
+
+a {
+    cursor: pointer;
+}
+
+#question-container {
+    text-align: left;
 }

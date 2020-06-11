@@ -1,0 +1,282 @@
+@media screen and (max-width: 560px) {
+    h1 {
+        font-size: 25px;
+    }
+
+    #startQuizContainer {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 1024px) and (min-width: 800px) {
+    #startQuizContainer {
+        margin-top: 500px;
+        width: 40%;
+    }
+
+    #question-container {
+        margin-top: 500px;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    #startQuizContainer {
+        margin-top: 350px;
+        width: 55%;
+    }
+
+    #question-container {
+        margin-top: 350px;
+    }
+}
+
+@media screen and (max-width: 414px) and (min-width: 380px) {
+    #startQuizContainer {
+        margin-top: 250px;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    #startQuizContainer {
+        margin-top: 300px;
+    }
+}
+
+@media screen and (width: 375px) and (height: 812px) {
+    #startQuizContainer {
+        margin-top: 150px;
+    }
+
+    #question {
+        text-align: left;
+        font-size: 15px;
+    }
+
+    #question-container {
+        width: 90%;
+    }
+
+    .button-grid {
+        width: 60%;
+    }
+
+    #allDone {
+        width: 80%;
+    }
+
+    #inputButton {
+        margin-top: 20px;
+    }
+
+    #clearHighscoreButton {
+        width: 100%;
+    }
+
+    #highScores {
+        width: 50%;
+        margin-top: 150px;
+    }
+}
+
+@media screen and (width: 414px) and (height: 736px) {
+    #startQuizContainer {
+        margin-top: 150px;
+    }
+
+    #question {
+        text-align: left;
+        font-size: 15px;
+    }
+
+    #question-container {
+        width: 90%;
+    }
+
+    .button-grid {
+        width: 60%;
+    }
+
+    #allDone {
+        width: 80%;
+    }
+
+    #inputButton {
+        margin-top: 20px;
+    }
+
+    #clearHighscoreButton {
+        width: 100%;
+    }
+
+    #highScores {
+        width: 50%;
+        margin-top: 150px;
+    }
+}
+
+@media screen and (width: 375px) and (height: 667px) {
+    #startQuizContainer {
+        margin-top: 200px;
+    }
+
+    #startQuizContainer {
+        margin-top: 150px;
+    }
+
+    #question {
+        text-align: left;
+        font-size: 15px;
+    }
+
+    #question-container {
+        width: 90%;
+    }
+
+    .button-grid {
+        width: 60%;
+    }
+
+    #allDone {
+        width: 80%;
+    }
+
+    #inputButton {
+        margin-top: 20px;
+    }
+
+    #clearHighscoreButton {
+        width: 100%;
+    }
+
+    #highScores {
+        width: 50%;
+        margin-top: 150px;
+    }
+}
+
+@media screen and (width: 320px) and (height: 568px) {
+
+    #startQuizContainer {
+        margin-top: 150px;
+    }
+
+    #question {
+        text-align: left;
+        font-size: 15px;
+    }
+
+    #question-container {
+        width: 90%;
+    }
+
+    .button-grid {
+        width: 60%;
+    }
+
+    #allDone {
+        width: 80%;
+    }
+
+    #inputButton {
+        margin-top: 20px;
+    }
+
+    #clearHighscoreButton {
+        width: 100%;
+    }
+
+    #highScores {
+        width: 50%;
+        margin-top: 150px;
+    }
+}
+
+@media screen and (width: 411px) and (height: 823px) {
+    #startQuizContainer {
+        margin-top: 300px;
+    }
+
+    #question {
+        text-align: left;
+        font-size: 15px;
+    }
+
+    #question-container {
+        width: 90%;
+    }
+
+    .button-grid {
+        width: 60%;
+    }
+
+    #allDone {
+        width: 80%;
+    }
+
+    #inputButton {
+        margin-top: 20px;
+    }
+
+    #clearHighscoreButton {
+        width: 100%;
+    }
+}
+
+@media screen and (width: 411px) and (height:731px) {
+    #question {
+        text-align: left;
+        font-size: 15px;
+    }
+
+    #question-container {
+        width: 90%;
+    }
+
+    .button-grid {
+        width: 60%;
+    }
+
+    #allDone {
+        width: 80%;
+    }
+
+    #inputButton {
+        margin-top: 20px;
+    }
+
+    #clearHighscoreButton {
+        width: 100%;
+    }
+}
+
+@media screen and (width: 360px) and (height: 640px) {
+    #startQuizContainer {
+        margin-top: 200px;
+    }
+
+    #question {
+        text-align: left;
+        font-size: 15px;
+    }
+
+    #question-container {
+        width: 90%;
+    }
+
+    .button-grid {
+        width: 60%;
+    }
+
+    #allDone {
+        width: 80%;
+    }
+
+    #inputButton {
+        margin-top: 20px;
+    }
+
+    #clearHighscoreButton {
+        width: 100%;
+    }
+
+}

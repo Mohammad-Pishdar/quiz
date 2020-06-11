@@ -96,7 +96,7 @@ if (localStorage && initialsAndHighscores != null) {
     for (let i = 0; i < initialsAndHighscores.length; i++) {
         let newTableRow = document.createElement("tr");
         let newTableCell = document.createElement("td");
-        newTableCell.textContent = initialsAndHighscores[i].initials + " - " + initialsAndHighscores[i].highscore;
+        newTableCell.textContent = (i + 1) + ". " + initialsAndHighscores[i].initials + " - " + initialsAndHighscores[i].highscore;
         newTableRow.appendChild(newTableCell);
         highscoreTable.appendChild(newTableRow);
     }
@@ -177,7 +177,7 @@ highscoreInputButton.addEventListener("click", function () {
     for (let i = 0; i < initialsAndHighscores.length; i++) {
         let newTableRow = document.createElement("tr");
         let newTableCell = document.createElement("td");
-        newTableCell.textContent = initialsAndHighscores[i].initials + " - " + initialsAndHighscores[i].highscore;
+        newTableCell.textContent = (i + 1) + ". " + initialsAndHighscores[i].initials + " - " + initialsAndHighscores[i].highscore;
         newTableRow.appendChild(newTableCell);
         highscoreTable.appendChild(newTableRow);
     }
