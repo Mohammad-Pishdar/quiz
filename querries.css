@@ -8,6 +8,34 @@
     }
 }
 
+@media screen and (width: 411px) and (height: 672px) {
+
+    #question {
+        text-align: left;
+        font-size: 15px;
+    }
+
+    #question-container {
+        width: 90%;
+    }
+
+    .button-grid {
+        width: 60%;
+    }
+
+    #allDone {
+        width: 80%;
+    }
+
+    #inputButton {
+        margin-top: 20px;
+    }
+
+    #clearHighscoreButton {
+        width: 100%;
+    }
+}
+
 @media screen and (max-width: 1024px) and (min-width: 800px) {
     #startQuizContainer {
         margin-top: 500px;
