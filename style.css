@@ -1,3 +1,5 @@
+/* Global seetings */
+/* -------------------------------------- */
 *,
 *::before,
 *::after {
@@ -8,10 +10,6 @@
 .body {
     margin: 0;
     padding: 0;
-}
-
-#timer {
-    float: right;
 }
 
 #startQuizContainer,
@@ -25,6 +23,22 @@
     margin-bottom: 200px;
 }
 
+.hide {
+    display: none;
+}
+
+/* Top Row Elements */
+/* -------------------------------------- */
+#timer {
+    float: right;
+}
+
+a {
+    cursor: pointer;
+}
+
+/* Button Seetings */
+/* -------------------------------------- */
 .button {
     background-color: #563d7c;
     border-radius: 5px;
@@ -41,13 +55,11 @@
     width: 40%;
 }
 
-.hide {
-    display: none;
-}
+/* Question Section */
+/* -------------------------------------- */
 
-.answer-buttons {
+#question-container {
     text-align: left;
-    margin: 2px;
 }
 
 #question {
@@ -64,6 +76,14 @@ hr {
     text-align: left;
 }
 
+.answer-buttons {
+    text-align: left;
+    margin: 2px;
+}
+
+/* All Done Section */
+/* -------------------------------------- */
+
 #allDoneMessage {
     font-size: 25px;
     font-weight: bold;
@@ -77,6 +97,9 @@ hr {
 form {
     float: left;
 }
+
+/* High Scores Section */
+/* -------------------------------------- */
 
 table {
     font-family: arial, sans-serif;
@@ -95,13 +118,6 @@ tr:nth-child(odd) {
     background-color: #dddddd;
 }
 
-#gameOver {
-    font-size: 50px;
-    font-weight: bold;
-    text-align: center;
-    margin-top: 200px;
-}
-
 .highscorebuttons {
     float: left;
     margin-right: 10px;
@@ -111,10 +127,12 @@ tr:nth-child(odd) {
     text-align: left;
 }
 
-a {
-    cursor: pointer;
-}
+/* Game Over Message Screen */
+/* -------------------------------------- */
 
-#question-container {
-    text-align: left;
+#gameOver {
+    font-size: 50px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 200px;
 }

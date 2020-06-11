@@ -134,7 +134,7 @@ answerButtons.addEventListener("click", function (event) {
         clearInterval(intervalReference);
         finalScore.textContent = secondsNumber.textContent;
     }
-    setTimeout(goToNextQuestion, 2000);
+    setTimeout(goToNextQuestion, 1000);
 });
 
 function goToNextQuestion() {
