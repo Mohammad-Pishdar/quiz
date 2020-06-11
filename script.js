@@ -126,12 +126,8 @@ answerButtons.addEventListener("click", function (event) {
     } else {
         horizontalRule.classList.replace("hide", "show");
         answerStatus.textContent = "Incorrect!";
-        if (secondsRemaining < 10) {
-            secondsRemaining = 0
-        } else {
-            secondsRemaining = secondsRemaining - 10;
-            secondsNumber.textContent = parseInt(secondsNumber.textContent) - 10;
-        }
+        secondsRemaining = secondsRemaining - 10;
+        secondsNumber.textContent = parseInt(secondsNumber.textContent) - 10;
     }
     if ((questions[(questions.length - 1)].question === question.textContent) && (event.target.getAttribute("data") === "true" || event.target.getAttribute("data") === "false")) {
         console.log("success");
@@ -142,11 +138,26 @@ answerButtons.addEventListener("click", function (event) {
 });
 
 function goToNextQuestion() {
-    questionIndex++
+    questionIndex++;
+    if (secondsRemaining === 80) {
+        questionIndex = 0;
+    }
     if (questionIndex === questions.length) {
         allDoneBox.classList.replace("hide", "show");
         questionsContainer.classList.replace("show", "hide");
         horizontalRule.classList.replace("show", "hide");
+        if (secondsRemaining < 0) {
+            secondsNumber.textContent = "0";
+            questionsContainer.classList.replace("show", "hide");
+            allDoneBox.classList.replace("show", "hide");
+            horizontalRule.classList.replace("show", "hide");
+            answerStatus.textContent = "";
+            gameOverDiv.classList.replace("hide", "show");
+            clearInterval(intervalReference);
+            setTimeout(goBackToStartPage, 1000);
+            secondsRemaining = 80;
+            questionIndex = 0;
+        }
     } else if (secondsRemaining < 0) {
         secondsNumber.textContent = "0";
         questionsContainer.classList.replace("show", "hide");
@@ -217,11 +228,12 @@ function timer() {
     intervalReference = setInterval(function interval() {
         secondsRemaining--;
         secondsNumber.textContent = secondsRemaining;
-        if (secondsRemaining === 0) {
+        if (secondsRemaining <= 0) {
             questionsContainer.classList.replace("show", "hide");
             gameOverDiv.classList.replace("hide", "show");
             clearInterval(intervalReference);
             setTimeout(goBackToStartPage, 1000);
+            secondsNumber.textContent = 0;
             secondsRemaining = 80;
             questionIndex = 0;
         }
