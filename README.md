@@ -3,7 +3,7 @@
 ## Description 
 The idea here is to build a timed code quiz with multiple-choice questions. This app will run in the browser and feature dynamically updated HTML and CSS powered by JavaScript code. It will also feature a clean and polished user interface and be responsive, ensuring that it adapts to multiple screen sizes. The user has to answer the questions by clicking on the appropriate answer button before the time runs out. Failure to answer the question within the allocated time will result in a Game Over. Here we use the remaining time at the time of answering the last question as user's score. Each user's score will be rendered into a high scores table on a numerically descending order that will dynamically updated each time a user takes the test. The ranking will remain in browser's local storage and will be accessibile even after refreshing the page unless the user decides to clear the high score table. Behind the scenes, it uses JavaScript to render different screens based on user's actions and to update highscores table and keep it in local storage unless user decides to clear it. 
 
-## Table of Contents (Optional)
+## Table of Contents 
 
 * [Installation](#installation)
 * [Usage](#usage)
