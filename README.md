@@ -13,7 +13,7 @@ The idea here is to build a timed code quiz with multiple-choice questions. This
 
 ## Installation
 
-This projec is an inetrenet-based app that runs inside the browser so you don't need to install anything. All you need is an internet browser to run the app. 
+This projec is an inetrenet-based app that runs inside the browser so you don't need to install anything. All you need is an internet browser to run the app. You can view the app by clikcing here: https://mohammad-pishdar.github.io/quiz/
 
 
 ## Usage 
